@@ -1,0 +1,227 @@
+/* ==========================================================================
+   TableActions.css - Enterprise Universal Table Actions
+   Strict adherence to client specifications:
+   - Small labelled text buttons (height 32px, 12px padding, 13px font)
+   - Outline styles: Neutral, Amber (Deactivate), Green (Activate), Red (Delete)
+   - Fixed slot for Activate/Deactivate so row positions never shift
+   - Responsive Mobile Cards: Labelled full-width action buttons at card bottom
+   ========================================================================== */
+
+/* Container for Desktop/Tablet Table Cell */
+.table-actions-group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  flex-wrap: nowrap !important;
+}
+
+.table-actions-group.dropdown-active {
+  z-index: 9999 !important;
+}
+
+tr:has(.dropdown-active) {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+/* Base Labelled Action Button */
+.btn-action-text {
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap !important;
+  line-height: 1;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.btn-action-text:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 1. Neutral Outline (View, Edit, Print, Adjust Stock, More) */
+.btn-action-neutral {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-action-neutral:hover:not(:disabled) {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* 2. Amber Outline (Deactivate) */
+.btn-action-adjust {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  border: 1px solid #1d4ed8;
+}
+
+.btn-action-adjust:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  border-color: #1e40af;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+}
+
+.btn-action-adjust svg {
+  color: #ffffff !important;
+}
+
+.btn-action-deactivate {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+
+.btn-action-deactivate:hover:not(:disabled) {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+/* 3. Green Outline (Activate) */
+.btn-action-activate {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.btn-action-activate:hover:not(:disabled) {
+  background-color: #dcfce7;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+/* 4. Red Outline (Delete) */
+.btn-action-delete {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.btn-action-delete:hover:not(:disabled) {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+/* Fixed Slot for Activate / Deactivate (Keeps Positions Constant) */
+.action-status-slot {
+  width: 104px;
+  min-width: 104px;
+  max-width: 104px;
+  display: inline-flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.action-status-slot .action-slot-btn {
+  width: 104px;
+  min-width: 104px;
+}
+
+/* Dropdown Menu for "More" Actions */
+.action-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.action-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  z-index: 9999;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Smart Dropup: opens upwards only when explicitly given .open-upwards class */
+.action-dropdown-menu.open-upwards {
+  top: auto !important;
+  bottom: calc(100% + 4px) !important;
+  box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.12), 0 -4px 6px -4px rgba(0, 0, 0, 0.08) !important;
+}
+
+.action-dropdown-item {
+  height: 32px;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.15s ease;
+  white-space: nowrap !important;
+}
+
+.action-dropdown-item.item-activate {
+  color: #15803d;
+}
+.action-dropdown-item.item-activate:hover {
+  background-color: #f0fdf4;
+}
+
+.action-dropdown-item.item-deactivate {
+  color: #b45309;
+}
+.action-dropdown-item.item-deactivate:hover {
+  background-color: #fffbeb;
+}
+
+.action-dropdown-item.item-delete {
+  color: #b91c1c;
+}
+.action-dropdown-item.item-delete:hover {
+  background-color: #fef2f2;
+}
+
+/* Mobile Card Actions (Bottom of Mobile Card) */
+.table-actions-mobile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  box-sizing: border-box;
+}
+
+.btn-action-full {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0;
+  box-sizing: border-box;
+}

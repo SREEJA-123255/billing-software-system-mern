@@ -1,0 +1,114 @@
+const mongoose = require("mongoose");
+
+const purchaseItemSchema = new mongoose.Schema(
+    {
+        productId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product",
+            required: true
+        },
+
+        quantity: {
+            type: Number,
+            required: true,
+            min: 1
+        },
+
+        purchasePrice: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+
+        tax: {
+            type: Number,
+            default: 0,
+            min: 0
+        }
+    },
+    { _id: false }
+);
+
+const purchaseSchema = new mongoose.Schema(
+    {
+        purchaseId: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
+
+        supplierId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Supplier",
+            required: true
+        },
+
+        purchaseDate: {
+            type: Date,
+            required: true
+        },
+
+        items: {
+            type: [purchaseItemSchema],
+            required: true,
+            validate: {
+                validator: (items) => items.length > 0,
+                message: "Purchase must contain at least one product"
+            }
+        },
+
+        subtotal: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+
+        discount: {
+            type: Number,
+            default: 0,
+            min: 0
+        },
+
+        tax: {
+            type: Number,
+            default: 0,
+            min: 0
+        },
+
+        totalAmount: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+
+        paymentStatus: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
+        customerId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Customer"
+        },
+
+        status: {
+            type: String,
+            enum: ["ACTIVE", "INACTIVE"],
+            default: "ACTIVE"
+        },
+
+        stockUpdated: {
+            type: Boolean,
+            default: false
+        }
+    },
+    {
+        timestamps: true
+    }
+);
+
+const Purchase = mongoose.model("Purchase", purchaseSchema);
+
+module.exports = Purchase;

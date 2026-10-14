@@ -1,0 +1,177 @@
+/* New Sale Form Styling - Unified with Design System */
+.newsale-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.newsale-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.newsale-col-main,
+.newsale-col-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .newsale-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop Items Table View */
+.newsale-items-table-container {
+  width: 100%;
+  overflow: visible !important;
+  position: relative;
+}
+
+.items-table {
+  width: 100%;
+  min-width: 0 !important;
+  border-collapse: collapse;
+}
+
+.items-table th,
+.items-table td {
+  padding: 0.875rem 0.625rem;
+  white-space: normal;
+  vertical-align: middle;
+  position: relative;
+}
+
+.items-table td.col-product {
+  min-width: 260px;
+}
+
+.items-table tr:has(.select-open),
+.items-table td:has(.select-open) {
+  z-index: 1055 !important;
+  position: relative;
+}
+
+.item-row-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile Items Card View */
+.mobile-items-view {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-items-view {
+    display: none;
+  }
+
+  .mobile-items-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+}
+
+.newsale-item-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 10px);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.newsale-item-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsale-item-number {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.newsale-item-card-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 0.625rem;
+  align-items: flex-end;
+}
+
+.newsale-item-total-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+/* Discount & Tax inputs */
+.newsale-discount-group {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .newsale-discount-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Totals Breakdown */
+.totals-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9375rem;
+  color: #475569;
+}
+
+.totals-row.grand-total {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-top: 2px solid var(--border-color);
+  padding-top: 0.875rem;
+  margin-top: 0.25rem;
+}

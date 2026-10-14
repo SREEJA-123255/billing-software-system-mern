@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Customers Page Dedicated Styling
+   Desktop parity strictly maintained; optimized mobile responsive view
+   ========================================================================== */
+
+/* Desktop & General Layout */
+.customers-page .filter-select-status {
+  min-width: 160px;
+  flex: 1 1 160px;
+}
+
+.customers-page .filter-btn-refresh {
+  width: 44px;
+  min-width: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Laptop / Desktop View Enhancements (>= 1024px) */
+@media (min-width: 1024px) {
+  .customers-page .universal-filter-card {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1.25rem !important;
+    padding: 1.125rem 1.5rem !important;
+  }
+
+  .customers-page .filter-row-top {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 280px !important;
+    max-width: 480px !important;
+  }
+
+  .customers-page .filter-row-bottom {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .customers-page .filter-select-status {
+    width: 180px !important;
+    min-width: 180px !important;
+    flex: 0 0 180px !important;
+  }
+
+  .customers-page .filter-btn-refresh {
+    width: 44px !important;
+    min-width: 44px !important;
+    flex: 0 0 44px !important;
+  }
+}
+
+/* Table Column Alignment & Sizing (Laptop / Desktop) */
+.customers-page .desktop-table-view th.col-cus-code,
+.customers-page .desktop-table-view td.col-cus-code {
+  width: 10% !important;
+  min-width: 95px !important;
+}
+
+.customers-page .desktop-table-view th.col-cus-details,
+.customers-page .desktop-table-view td.col-cus-details,
+.customers-page .desktop-table-view .col-details-cell {
+  width: 18% !important;
+  min-width: 170px !important;
+  max-width: none !important;
+}
+
+.customers-page .desktop-table-view th.col-cus-phone,
+.customers-page .desktop-table-view td.col-cus-phone {
+  width: 11% !important;
+  min-width: 110px !important;
+}
+
+.customers-page .desktop-table-view th.col-cus-email,
+.customers-page .desktop-table-view td.col-cus-email,
+.customers-page .desktop-table-view .col-email-cell {
+  width: 17% !important;
+  min-width: 160px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  padding-right: 1rem !important;
+}
+
+.customers-page .desktop-table-view th.col-cus-gst,
+.customers-page .desktop-table-view td.col-cus-gst,
+.customers-page .desktop-table-view .col-gst-cell {
+  width: 13% !important;
+  min-width: 125px !important;
+  padding-left: 0.5rem !important;
+}
+
+.customers-page .desktop-table-view th.col-status,
+.customers-page .desktop-table-view td.col-status,
+.customers-page .desktop-table-view th.col-cus-status,
+.customers-page .desktop-table-view td.col-cus-status {
+  width: 12% !important;
+  min-width: 115px !important;
+  white-space: nowrap !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.customers-page .desktop-table-view th.col-actions,
+.customers-page .desktop-table-view td.col-actions,
+.customers-page .desktop-table-view th.col-cus-actions,
+.customers-page .desktop-table-view td.col-cus-actions,
+.customers-page .desktop-table-view th:last-child,
+.customers-page .desktop-table-view td:last-child {
+  width: 19% !important;
+  min-width: 225px !important;
+  max-width: none !important;
+  text-align: right !important;
+  padding-right: 0.5rem !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.customers-page .desktop-table-view .item-name-cell {
+  white-space: nowrap !important;
+  display: block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.customers-page .desktop-table-view .col-email-cell .cell-truncate-single {
+  display: block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .customers-page .table-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .customers-page .desktop-table-view,
+  .customers-page .universal-table {
+    display: none !important;
+  }
+
+  /* Compact, unified mobile filter row: Status dropdown and Refresh button side-by-side */
+  .customers-page .filter-row-bottom {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .customers-page .filter-select-status {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    height: 42px !important;
+    margin: 0 !important;
+  }
+
+  .customers-page .filter-btn-refresh {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .customers-page .universal-mobile-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* Mobile Customer Cards - Premium, compact business layout */
+  .customers-page .mobile-card-item {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .customers-page .mobile-card-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  .customers-page .mobile-card-title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
+  .customers-page .mobile-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid #f1f5f9 !important;
+  }
+
+  .customers-page .mobile-card-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    min-width: 0 !important;
+  }
+
+  .customers-page .mobile-card-field.col-span-2 {
+    grid-column: span 2 !important;
+  }
+
+  .customers-page .mobile-card-label {
+    font-size: 0.6875rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #94a3b8 !important;
+  }
+
+  .customers-page .mobile-card-value {
+    font-size: 0.8125rem !important;
+    color: #1e293b !important;
+    font-weight: 500 !important;
+    word-break: break-word !important;
+  }
+
+  .customers-page .mobile-card-footer {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-top: 4px !important;
+    border-top: 1px solid #f8fafc !important;
+  }
+
+  .customers-page .mobile-card-footer .table-actions-mobile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .customers-page .mobile-card-footer .table-actions-mobile .btn,
+  .customers-page .mobile-card-footer .table-actions-mobile .btn-action-text {
+    flex: 1 1 auto !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+}

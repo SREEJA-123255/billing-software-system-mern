@@ -1,0 +1,43 @@
+/* New Return Processing Styling */
+.new-return-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.return-item-selector-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.new-return-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .new-return-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 0.625rem;
+  }
+
+  .new-return-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+}
